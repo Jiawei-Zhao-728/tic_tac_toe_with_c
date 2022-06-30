@@ -46,7 +46,7 @@ int main () {
 
     printing_board (data);
     int round = 0; 
-    bool needs_end = false;
+    bool needs_end = true;
     int alternate = 0;
 
     // the alternating structure:
@@ -69,9 +69,15 @@ int main () {
 
         // last change for rounds:
         if (round <= 3) {
-            needs_end == false;
+            needs_end = false;
         }
     }
+
+    // freeing memory: 
+    for (int i = 0; i < 3; i++) {
+        free (data[i]);
+    }
+    free (data); 
 
 
 
